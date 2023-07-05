@@ -249,7 +249,7 @@ def main():
                 except: garajes_inmueble = ""
                     
                 propertyinfo = f'<strong>{inmueble["areaconstruida"]}</strong> mt<sup>2</sup> | <strong>{int(inmueble["habitaciones"])}</strong> hab | <strong>{int(inmueble["banos"])}</strong> baños {garajes_inmueble}'
-                url_export   = f"https://buydepa-app-chile.streamlit.app/Ficha?code={inmueble['code']}&tiponegocio=Venta&tipoinmueble=Apartamento" 
+                url_export   = f"https://buydepa-app.streamlit.app/Ficha?code={inmueble['code']}&tiponegocio=Venta&tipoinmueble=Apartamento" 
     
                 if isinstance(inmueble['direccion'], str): direccion = inmueble['direccion'][0:35]
                 else: direccion = '&nbsp'

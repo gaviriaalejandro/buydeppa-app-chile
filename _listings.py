@@ -151,7 +151,7 @@ def main():
             for i, inmueble in st.session_state.data.iterrows():
                 if isinstance(inmueble['imagen_principal'], str) and len(inmueble['imagen_principal'])>20: imagen_principal =  inmueble['imagen_principal']
                 else: imagen_principal = "https://personal-data-bucket-online.s3.us-east-2.amazonaws.com/sin_imagen.png"
-                url_export   = f"https://buydepa-app-chile.streamlit.app/Ficha?codigo={inmueble['code']}&tiponegocio={st.session_state.tiponegocio}&tipoinmueble={st.session_state.tipoinmueble}" 
+                url_export   = f"https://buydepa-app.streamlit.app/Ficha?codigo={inmueble['code']}&tiponegocio={st.session_state.tiponegocio}&tipoinmueble={st.session_state.tipoinmueble}" 
                 string_popup = f'''
                 <!DOCTYPE html>
                 <html>
@@ -411,7 +411,7 @@ def main():
             if isinstance(inmueble['imagen_principal'], str) and len(inmueble['imagen_principal'])>20: imagen_principal =  inmueble['imagen_principal']
             else: imagen_principal = "https://personal-data-bucket-online.s3.us-east-2.amazonaws.com/sin_imagen.png"
             caracteristicas = f'<strong>{inmueble["areaconstruida"]}</strong> mt<sup>2</sup> | <strong>{int(inmueble["habitaciones"])}</strong> hab | <strong>{int(inmueble["banos"])}</strong> baños | <strong>{int(inmueble["garajes"])}</strong> pq'
-            url_export      = f"https://buydepa-app-chile.streamlit.app/Ficha?code={inmueble['code']}&tiponegocio={st.session_state.tiponegocio}&tipoinmueble={st.session_state.tipoinmueble}"
+            url_export      = f"https://buydepa-app.streamlit.app/Ficha?code={inmueble['code']}&tiponegocio={st.session_state.tiponegocio}&tipoinmueble={st.session_state.tipoinmueble}"
             
             if pd.isnull(inmueble['direccion']): direccionlabel = '<p class="caracteristicas-info">&nbsp</p>'
             else: direccionlabel = f'''<p class="caracteristicas-info">Dirección: {inmueble['direccion'][0:35]}</p>'''
